@@ -7,5 +7,5 @@ import (
 )
 
 func main() {
-	fmt.Print(solution_1.Calibrate());
+	fmt.Print(solution_1.Calibrate2());
 }
