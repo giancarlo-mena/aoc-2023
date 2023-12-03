@@ -10,10 +10,7 @@ import (
 )
 
 func Calibrate2() int {
-	numbers := map[string]int{
-		"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4,
-		"five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9,
-	}
+	numbers := []string{"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"}
 
 	flag := false
 	first := 0
@@ -33,8 +30,8 @@ func Calibrate2() int {
 		line := scanner.Text()
 		flag = false
 
-		for key, val := range numbers {
-			line = strings.ReplaceAll(line, key, strconv.Itoa(val))
+		for i, val := range numbers {
+			line = strings.ReplaceAll(line, val, strconv.Itoa(i+1))
 		}
 
 		for _, c := range line {
@@ -47,8 +44,6 @@ func Calibrate2() int {
 				last = int(c - '0')
 			}
 		}
-
-		
 
 		total += first*10 + last
 	}
